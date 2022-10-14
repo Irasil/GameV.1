@@ -19,12 +19,17 @@ public class PlayerMovement : MonoBehaviour
     private float ySpeed;
     public float jumpHeight = 6.5f;
     public float speed1 = 2.0f;
+    public int health;
+    public GameObject DeadUi;
 
     private Animator animator;
+    public GameObject wald;
+    public GameObject magazin;
 
     private void Start()
     {
            animator = GetComponent<Animator>();
+           
     }
 
 
@@ -57,6 +62,19 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             velocity.y += gravity * Time.deltaTime;
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            wald.SetActive(false);
+            magazin.SetActive(false);
+            DeadUi.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Destroy(gameObject);
         }
     }
 }

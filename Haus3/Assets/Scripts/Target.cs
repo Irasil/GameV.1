@@ -10,21 +10,15 @@ public class Target : MonoBehaviour
         health -= amount;
         if (health <= 0f)
         {
-            Die();
+            Head();
         }
 
-    }
-
-     void Die()
-    {
-        Destroy(target);
-    }
+    }   
 
     public void Head()
-    {
+    {     
         
-        
-            Destroy(target);
+        Destroy(target.transform.parent.gameObject);       
         
     }
 }
