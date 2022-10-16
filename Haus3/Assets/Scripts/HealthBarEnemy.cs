@@ -3,27 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class HealthBarEnemy : MonoBehaviour
 {
-    //public GameObject playerHealth;
-    private Image Image;
+    // Start is called before the first frame update
+    public Image Image;
+    public GameObject enemy;
 
     private float currentHealth;
     private float maxHealth;
 
     public void Start()
     {
-        maxHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().health;
+        maxHealth = enemy.GetComponent<Target>().health;
         Debug.Log(maxHealth);
-        Image = GetComponent<Image>();
+        //Image = GameObject.Find("Forground").GetComponent<Image>();
     }
 
     public void Update()
     {
-        currentHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().health;
-        //Debug.Log(currentHealth / maxHealth);
+        transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
+
+        currentHealth = enemy.GetComponent<Target>().health;
+        Debug.Log(currentHealth);
         Image.fillAmount = currentHealth / maxHealth;
-        if (currentHealth < 50f && currentHealth > 20f)
+        if (currentHealth < 30f && currentHealth > 20f)
         {
             Image.color = Color.yellow;
             Image.fillAmount = currentHealth / maxHealth;
@@ -34,5 +37,4 @@ public class HealthBar : MonoBehaviour
             Image.fillAmount = currentHealth / maxHealth;
         }
     }
-
 }
