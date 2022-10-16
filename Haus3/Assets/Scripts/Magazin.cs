@@ -11,6 +11,14 @@ public class Magazin : MonoBehaviour
     public void Update()
     {
         counter = GameObject.Find("Gun").GetComponent<Gun>().currentAmmo;
+        //counterText.text = "Hallo";
+        BulletUI();
+        
+    }
+
+    public void BulletUI()
+    {
+        counterText = GameObject.Find("BulletCountUI").GetComponent<Text>();
         counterText.text = counter.ToString();
     }
 }

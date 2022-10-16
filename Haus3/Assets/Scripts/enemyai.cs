@@ -29,13 +29,12 @@ public class enemyai : MonoBehaviour
     //States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
-    public int damage;
 
     private void Awake()
     {
         player = GameObject.Find("ziel").transform;
         agent = GetComponent<NavMeshAgent>();
-        spawn = GameObject.Find("bulletspawn").transform;
+        //spawn = GameObject.Find("bulletspawn").transform;
     }
 
     private void Update()
@@ -81,7 +80,6 @@ public class enemyai : MonoBehaviour
 
     private void AttackPlayer()
     {
-        //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
         transform.LookAt(player);

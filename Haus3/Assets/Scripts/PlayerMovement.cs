@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private float ySpeed;
     public float jumpHeight = 6.5f;
     public float speed1 = 2.0f;
-    public int health;
+    public float health;
     public GameObject DeadUi;
 
     private Animator animator;
@@ -45,15 +45,26 @@ public class PlayerMovement : MonoBehaviour
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        Vector3 move;
 
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move.normalized* speed * Time.deltaTime);
-        animator.SetFloat("Speed", move.normalized.magnitude *2);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            move = transform.right * x + transform.forward * z;
+            controller.Move(move.normalized * speed * 2 * Time.deltaTime);
+            animator.SetFloat("Speed", move.normalized.magnitude * 2);
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
+        }
+        else
+        {
+            move = transform.right * x + transform.forward * z;
+            controller.Move(move.normalized* speed * Time.deltaTime);
+            animator.SetFloat("Speed", move.normalized.magnitude *2); 
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
+        }
+
         
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
 
         if (Input.GetButtonDown("Jump") && gameObject.transform.position.y < 1f)       
         {
@@ -63,6 +74,9 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y += gravity * Time.deltaTime;
         }
+
+        
+        
     }
 
     public void TakeDamage(int damage)
@@ -74,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
             magazin.SetActive(false);
             DeadUi.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
