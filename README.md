@@ -17,3 +17,5 @@ Für die 3D-Modelle und die Animationen habe ich Blender verwendet.
 Für die Bilder der Menues habe ich [Midjourney](https://www.midjourney.com) verwendet.
 
 Die Bewegung der "Gegner" wurde mit NavMesh realisiert.  
+
+<a href="https://ibb.co/FgBhT5m"><img src="https://i.ibb.co/yW8Nj6d/navmesh.gif" alt="navmesh" border="0"></a>
