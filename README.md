@@ -1,6 +1,7 @@
 # GameV.1
 
-Dies ist eine meiner Arbeitsproben.
+Dies ist eine meiner Arbeitsproben. 
+Um das Spiel zu testen, den Game Ordner vollständig herunterladen und die darin enthaltenen Haus.exe starten.
 
 <a href="https://ibb.co/S36LVsR"><img src="https://i.ibb.co/sVgBsmy/6.jpg" alt="6" border="0"></a>
 
