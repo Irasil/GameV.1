@@ -18,4 +18,4 @@ Für die Bilder der Menues habe ich [Midjourney](https://www.midjourney.com) ver
 
 Die Bewegung der "Gegner" wurde mit NavMesh realisiert.  
 
-<a href="https://ibb.co/FgBhT5m"><img src="https://i.ibb.co/yW8Nj6d/navmesh.gif" alt="navmesh" border="0"></a>
+[![navmesh.gif](https://s3.gifyu.com/images/navmesh.gif)](https://gifyu.com/image/Svws7)
