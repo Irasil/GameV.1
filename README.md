@@ -8,7 +8,7 @@ Um das Spiel zu testen, den Game Ordner vollständig herunterladen und die darin
 Ich habe ein kleines 3D-Game mit Unity erstellt.
 Alles ausser das Waffenmodel und den Sounds habe ich selber erstellt.
 
-<a href="https://ibb.co/d6WXHph"><img src="https://i.ibb.co/Mp2KJ1X/Screenshot-2022-12-27-052955.png" alt="Screenshot-2022-12-27-052955" border="0"></a>
+<a href="https://ibb.co/SrsKYnX"><img src="https://i.ibb.co/ws0KGWN/Screenshot-20221227-052944.png" alt="Screenshot-20221227-052944" border="0"></a>
 
 Für die 3D-Modelle und die Animationen habe ich Blender verwendet.
 
